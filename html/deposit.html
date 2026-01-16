@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-container').innerHTML = html;
+            })
+    </script>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Realizar Depósito</h4>
+                    </div>
+                    <div class="card-body"></div>
+                    <div class="alert alert-info mb-4">
+                        <div class="d-flex justify-content-between">
+                            <span>Saldo actual:</span>
+                            <strong id="currentBalance">$0</strong>
+                        </div>
+                    </div>
+
+                    <form id="depositForm">
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Monto a depositar</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="amount" >
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Depositar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/main.js"></script>
+</body>
+
+</html>

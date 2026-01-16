@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sendmoney</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-container').innerHTML = html;
+            })
+    </script>
+
+     <div class="container py-5 d-flex justify-content-center">
+        <div class="credit-card bg-primary text-white p-4 d-flex flex-column justify-content-between shadow-lg" style="border-radius: 16px; max-width: 380px; width: 100%;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="mb-0">ALKE WALLET</h4>
+                <i class="fab fa-cc-visa fa-2x"></i>
+            </div>
+            <div class="card-number h5 mb-4">
+                <h2 class="display-4" id="balance">$</h2>
+            </div>
+            <div class="d-flex justify-content-between align-items-end">
+                <div>
+                    <div class="card-holder font-weight-bold">Marioly</div>
+                    <div>Exp: 12/25</div>
+                </div>
+                <img src="https://www.svgrepo.com/show/362035/visa-3.svg" alt="Chip" width="48">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal: dos tarjetas lado a lado -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            
+
+            <!-- Primera tarjeta -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow border-10 h-100">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Enviar Dinero</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="sendMoneyForm">
+                            <div class="mb-3">
+                                <label for="contactSearch" class="form-label">Buscar Contacto</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="contactSearch" 
+                                           placeholder="Escribe nombre o email">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="sendAmount" class="form-label">Monto a enviar</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="sendAmount" required>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-info">Enviar Dinero</button>
+                            </div>
+                            <div class="mt-2">
+                                <a href="menu.html" class="btn btn-outline-secondary ml-auto">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda tarjeta -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow border-10 h-100">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Retirar Dinero</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="withdrawForm">
+                            <div class="mb-3">
+                                <label for="withdrawAmount" class="form-label">Monto a retirar</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="withdrawAmount" required>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-outline-info" id="withdraw-button">Retirar Dinero</button>  
+                            </div>
+                            <div class="mt-2">
+                                <a href="menu.html" class="btn btn-outline-secondary ml-auto">Cancelar</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../JS/main.js"></script>
+
+</body>
+
+</html>
